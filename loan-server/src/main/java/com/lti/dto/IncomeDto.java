@@ -1,31 +1,18 @@
-package com.lti.entity;
+package com.lti.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "IncomeDetails")
-public class IncomeDetails {
-
-	@Id
-	@ManyToOne
-	//private int accountNo; try 
-	@JoinColumn(name ="accountNo")
-	private AccountDetails accountDetails;
+public class IncomeDto {
+	
+	private double accountNo;
 	private double income;
 	private String typeOfEmployment;
 	private String organizationType;
 	private String organizationName;
 	private String employerName;
-	
-	public AccountDetails getAccountDetails() {
-		return accountDetails;
+	public double getAccountNo() {
+		return accountNo;
 	}
-	public void setAccountDetails(AccountDetails accountDetails) {
-		this.accountDetails = accountDetails;
+	public void setAccountNo(double accountNo) {
+		this.accountNo = accountNo;
 	}
 	public double getIncome() {
 		return income;
@@ -57,4 +44,5 @@ public class IncomeDetails {
 	public void setEmployerName(String employerName) {
 		this.employerName = employerName;
 	}
+
 }
