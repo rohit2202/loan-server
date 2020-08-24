@@ -3,6 +3,7 @@ package com.lti.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,10 +14,11 @@ import javax.persistence.Table;
 public class PersonalDetails {
 	
 	@Id
+	@GeneratedValue
+	private int personalDetailsId;
 	@ManyToOne
 	@JoinColumn(name ="customerId")
 	private Customer customer;
-	
 	private LocalDate dateOfBirth;
 	private double phoneNo;
 	private String emailId;
@@ -24,6 +26,12 @@ public class PersonalDetails {
 	private String nationality;
 	private String aadhaarNo;
 	private  String panNo;
+	public int getPersonalDetailsId() {
+		return personalDetailsId;
+	}
+	public void setPersonalDetailsId(int personalDetailsId) {
+		this.personalDetailsId = personalDetailsId;
+	}
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -73,6 +81,5 @@ public class PersonalDetails {
 		this.panNo = panNo;
 	}
 	
-
 	
 }

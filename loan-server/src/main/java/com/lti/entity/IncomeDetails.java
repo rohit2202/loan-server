@@ -1,6 +1,7 @@
 package com.lti.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,21 +12,27 @@ import javax.persistence.Table;
 public class IncomeDetails {
 
 	@Id
+	@GeneratedValue
+	private int detailsId;	
 	@ManyToOne
-	//private int accountNo; try 
-	@JoinColumn(name ="accountNo")
-	private AccountDetails accountDetails;
+	@JoinColumn(name ="customerId")
+	private Customer customer;
 	private double income;
 	private String typeOfEmployment;
 	private String organizationType;
 	private String organizationName;
 	private String employerName;
-	
-	public AccountDetails getAccountDetails() {
-		return accountDetails;
+	public int getDetailsId() {
+		return detailsId;
 	}
-	public void setAccountDetails(AccountDetails accountDetails) {
-		this.accountDetails = accountDetails;
+	public void setDetailsId(int detailsId) {
+		this.detailsId = detailsId;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	public double getIncome() {
 		return income;
@@ -57,4 +64,7 @@ public class IncomeDetails {
 	public void setEmployerName(String employerName) {
 		this.employerName = employerName;
 	}
+	
+	
+	
 }

@@ -14,8 +14,8 @@ public class Loan {
 	private int loanId;
 	
 	@ManyToOne
-	@JoinColumn(name ="accountNo")
-	private AccountDetails accountDetails;
+	@JoinColumn(name ="customerId")
+	private Customer customer;
 	private double amountEligible;
 	private String loanStatus;
 	public int getLoanId() {
@@ -24,11 +24,11 @@ public class Loan {
 	public void setLoanId(int loanId) {
 		this.loanId = loanId;
 	}
-	public AccountDetails getAccountDetails() {
-		return accountDetails;
+	public Customer getCustomer() {
+		return customer;
 	}
-	public void setAccountDetails(AccountDetails accountDetails) {
-		this.accountDetails = accountDetails;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	public double getAmountEligible() {
 		return amountEligible;
@@ -43,5 +43,4 @@ public class Loan {
 		this.loanStatus = loanStatus;
 	}
 	
-
 }

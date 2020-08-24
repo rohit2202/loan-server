@@ -3,6 +3,7 @@ package com.lti.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,6 +14,8 @@ import javax.persistence.Table;
 public class LoanDetails {
 	
 	@Id
+	@GeneratedValue
+	private int loanDetailsId;
 	@ManyToOne
 	@JoinColumn (name ="loanId")
 	private Loan loan;
@@ -22,6 +25,12 @@ public class LoanDetails {
 	private LocalDate issueDate;
 	private int duration;
 	private double penalty;
+	public int getLoanDetailsId() {
+		return loanDetailsId;
+	}
+	public void setLoanDetailsId(int loanDetailsId) {
+		this.loanDetailsId = loanDetailsId;
+	}
 	public Loan getLoan() {
 		return loan;
 	}
@@ -58,7 +67,6 @@ public class LoanDetails {
 	public void setPenalty(double penalty) {
 		this.penalty = penalty;
 	}
-	
 	
 
 }
