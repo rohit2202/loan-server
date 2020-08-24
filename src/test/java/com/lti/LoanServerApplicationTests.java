@@ -13,6 +13,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.entity.Customer;
+import com.lti.entity.Customer.GENDER;
 import com.lti.repository.CustomerRepository;
 
 @SpringBootTest
@@ -26,10 +27,16 @@ class  LoanServerApplicationTests {
 	@Test
 	void add() {
 		Customer c = new Customer();
-		c.setCustomerName("Hero");
-		c.setEmail("hero@example.com");
-		c.setPassword("hero");
-		c.setDateOfBirth(LocalDate.of(1998, 9, 11));
+		c.setCustomerName("Mahesh");
+		c.setEmail("mahi@example.com");
+		c.setPassword("mahi");
+		c.setDateOfBirth(LocalDate.of(1987,12, 01));
+		c.setPhone(865154789);
+		c.setNationality("Indian");
+		c.setAadharNo(985634576);
+		c.setPanNo("AER11");
+		c.setGender(GENDER.MALE);
+		
 
 		customerRepo.save(c);
 		// assert missing
