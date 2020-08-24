@@ -11,5 +11,6 @@ public interface CustomerRepository {
     Long findByUsernamePassword(String email, String password);
     boolean isCustomerPresent(String email);
     Customer findById(Long id);
+    //Long findByUsernamePassword(String email, String password);
 
 }

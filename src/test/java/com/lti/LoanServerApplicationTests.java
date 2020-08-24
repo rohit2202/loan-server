@@ -26,9 +26,9 @@ class  LoanServerApplicationTests {
 	@Test
 	void add() {
 		Customer c = new Customer();
-		c.setCustomerName("Raj");
-		c.setEmail("raj@example.com");
-		c.setPassword("jar");
+		c.setCustomerName("Hero");
+		c.setEmail("hero@example.com");
+		c.setPassword("hero");
 		c.setDateOfBirth(LocalDate.of(1998, 9, 11));
 
 		customerRepo.save(c);
