@@ -47,7 +47,7 @@ class  LoanServerApplicationTests {
 	}
 
 	@Test
-	void findByEmailAndPassword() {
+	void findByUsernamePassword() {
 
 		long id = customerRepo.findByUsernamePassword("raj@example.com", "jar");
 		System.out.println("Customer id is"+id);
