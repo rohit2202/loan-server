@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,21 +9,24 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="PropertyDetails")
+@Table(name ="propertydetails")
 public class PropertyDetails {
 
 	@Id
 	@GeneratedValue
+	@Column(name="propertyid")
 	private int propertyId;
 	
 	@ManyToOne
-	@JoinColumn(name ="loanId")
+	@JoinColumn(name ="loanid")
 	private Loan loan;
-	
-	private String propertyName;;
+	@Column(name="propertyname")
+	private String propertyName;
+	@Column(name="estimatedamount")
 	private double estimatedAmount;
+	@Column(name="propertlocation")
 	private String propertyLocation;
-	private String propertLocation;
+	//private String propertLocation;
 	public int getPropertyId() {
 		return propertyId;
 	}
@@ -52,12 +56,6 @@ public class PropertyDetails {
 	}
 	public void setPropertyLocation(String propertyLocation) {
 		this.propertyLocation = propertyLocation;
-	}
-	public String getPropertLocation() {
-		return propertLocation;
-	}
-	public void setPropertLocation(String propertLocation) {
-		this.propertLocation = propertLocation;
 	}
 	
 }

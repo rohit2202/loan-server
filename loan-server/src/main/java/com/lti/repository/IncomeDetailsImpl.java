@@ -16,12 +16,15 @@ public class IncomeDetailsImpl {
 	private EntityManager entityManager;
 
 	@Transactional
-	/*public AccountDetails findByAccountNo(double accountNo) {
-		return entityManager.find(AccountDetails.class, accountNo);
-		//return entityManager.create
-	}*/
-
 	public void save(IncomeDetails incomeDetails) {
 		entityManager.merge(incomeDetails);
+	}
+	public boolean isCustomerPresent(long customerId) {
+		return ((Number)entityManager.createNamedQuery("is-present")
+				.setParameter("customerid", customerId)
+				.getSingleResult()).intValue()== 1? true:false;
+	}
+	public Customer findById(int id) {
+		return entityManager.find(Customer.class, Long.valueOf(id));
 	}
 }

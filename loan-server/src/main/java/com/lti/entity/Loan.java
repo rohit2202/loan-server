@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -7,18 +8,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Loan")
+@Table(name ="loan")
 public class Loan {
 
 	@Id
+	@Column(name="loanid")
 	private int loanId;
 	
 	@ManyToOne
-	@JoinColumn(name ="customerId")
+	@JoinColumn(name ="customerid")
 	private Customer customer;
+	@Column(name="amounteligible")
 	private double amountEligible;
+	@Column(name="loanstatus")
 	private String loanStatus;
-	public int getLoanId() {
+	public int getloanId() {
 		return loanId;
 	}
 	public void setLoanId(int loanId) {

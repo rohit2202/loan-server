@@ -2,18 +2,19 @@ package com.lti.dto;
 
 public class IncomeDto {
 	
-	private double accountNo;
+	private int customerId;
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
 	private double income;
 	private String typeOfEmployment;
 	private String organizationType;
 	private String organizationName;
 	private String employerName;
-	public double getAccountNo() {
-		return accountNo;
-	}
-	public void setAccountNo(double accountNo) {
-		this.accountNo = accountNo;
-	}
+	
 	public double getIncome() {
 		return income;
 	}
@@ -25,6 +26,12 @@ public class IncomeDto {
 	}
 	public void setTypeOfEmployment(String typeOfEmployment) {
 		this.typeOfEmployment = typeOfEmployment;
+	}
+	@Override
+	public String toString() {
+		return "IncomeDto [customerId=" + customerId + ", income=" + income + ", typeOfEmployment=" + typeOfEmployment
+				+ ", organizationType=" + organizationType + ", organizationName=" + organizationName
+				+ ", employerName=" + employerName + "]";
 	}
 	public String getOrganizationType() {
 		return organizationType;

@@ -2,28 +2,36 @@ package com.lti.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="LoanDetails")
+@Table(name ="loandetails")
+@NamedQuery(name ="is-loan-present", query =("select count(l.loan) from LoanDetails l where l.loan= :loanId"))
 public class LoanDetails {
 	
 	@Id
 	@GeneratedValue
+	@Column(name="loandetailsid")
 	private int loanDetailsId;
 	@ManyToOne
-	@JoinColumn (name ="loanId")
+	@JoinColumn (name ="loanid")
 	private Loan loan;
-	
+	@Column(name="amountpassed")
 	private double amountPassed;
+	@Column(name="loaninterest")
 	private float loanInterest;
+	@Column(name="issuedate")
 	private LocalDate issueDate;
+	@Column(name="duration")
 	private int duration;
+	@Column(name="penalty")
 	private double penalty;
 	public int getLoanDetailsId() {
 		return loanDetailsId;
