@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,14 +26,15 @@ class  LoanServerApplicationTests {
 	@Test
 	void add() {
 		Customer c = new Customer();
-		c.setCustomerName("Mahesh");
-		c.setEmail("mahi@example.com");
-		c.setPassword("mahi");
-		c.setDateOfBirth(LocalDate.of(1987,12, 01));
-		c.setPhone(865154789);
+		
+		c.setCustomerName("Rohit Roy");
+		c.setEmail("roy@example.com");
+		c.setPassword("roy");
+		c.setDateOfBirth(LocalDate.of(1999,02, 07));
+		c.setPhone("9911016526");
 		c.setNationality("Indian");
-		c.setAadharNo(985634576);
-		c.setPanNo("AER11");
+		c.setAadharNo("985623560974");
+		c.setPanNo("XCR63");
 		c.setGender(GENDER.MALE);
 		
 
@@ -53,10 +53,10 @@ class  LoanServerApplicationTests {
 		// assert missing
 	}
 
-	@Test
+@Test
 	void findByUsernamePassword() {
 
-		long id = customerRepo.findByUsernamePassword("raj@example.com", "jar");
+		long id = customerRepo.findByUsernamePassword("roy@example.com", "roy");
 		System.out.println("Customer id is"+id);
 		// assert missing
 	}
